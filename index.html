@@ -19,6 +19,17 @@
         solutionDetails.style.display = "block"; 
       }, 10 * 60 * 1000);  // 10分鐘的毫秒数
     });
+
+
+     setTimeout(function() {
+        var draggableElements = document.querySelectorAll(".pt.draggable circle");
+
+        draggableElements.forEach(function(element) {
+          element.style.cursor = "not-allowed";
+          element.style.pointerEvents = "none";
+        });
+      }, 10 * 60 * 1000);  // 十分鐘的毫秒数
+    });
   </script>
 </head>
 <body>
