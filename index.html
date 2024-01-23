@@ -1,18 +1,32 @@
-<html>
-  <head>
-    <title>Brachistochrone</title>
-    <link rel="stylesheet" href="styles.css"/>
-    <meta charset="utf-8" />
-  </head>
-  <body>
-    <div id="plot"></div>
-    <div class="panel" id="controls">
-      <div class="btn-group">
-        <button id="toggle-particles" class="btn">Pause</button>
-        <button id="toggle-solution" class="btn">Hide Solution</button>
-      </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brachistochrone</title>
+  <link rel="stylesheet" href="styles.css"/>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
 
-    </div>
-    <script src="bundle.js"></script>
-  </body>
+      var testCurveDetails = document.getElementById("test-curve-details");
+      var solutionDetails = document.getElementById("solution-details");
+
+      testCurveDetails.style.display = "none";
+      solutionDetails.style.display = "none";
+
+      setTimeout(function() {
+        testCurveDetails.style.display = "block"; 
+        solutionDetails.style.display = "block"; 
+      }, 10 * 60 * 1000);  // 10分鐘的毫秒数
+    });
+  </script>
+</head>
+<body>
+  <div id="plot"></div>
+  <div class="panel" id="controls">
+    <div id="test-curve-details" class="details-field"></div>
+    <div id="solution-details" class="details-field"></div>
+  </div>
+  <script src="bundle.js"></script>
+</body>
 </html>
