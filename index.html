@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="styles.css"/>
   <script>
     document.addEventListener("DOMContentLoaded", function() {
+      // 在DOM加载完成后执行以下代码
 
       var testCurveDetails = document.getElementById("test-curve-details");
       var solutionDetails = document.getElementById("solution-details");
@@ -17,18 +18,25 @@
       setTimeout(function() {
         testCurveDetails.style.display = "block"; 
         solutionDetails.style.display = "block"; 
-      }, 10  * 1000);  // 10分鐘的毫秒数
-    });
+      }, 10 * 1000);  // 10分钟的毫秒数
 
-
-     setTimeout(function() {
+      // 在这里添加了一个大括号，以正确闭合addEventListener的回调函数
+      setTimeout(function() {
         var draggableElements = document.querySelectorAll(".pt.draggable circle");
 
         draggableElements.forEach(function(element) {
           element.style.cursor = "not-allowed";
           element.style.pointerEvents = "none";
         });
-      }, 10 * 1000);  // 十分鐘的毫秒数
+      }, 10 * 1000);  // 十分钟的毫秒数
+    });
+
+    window.addEventListener('load', function() {
+      var hideSolutionBtn = document.getElementById('toggle-solution');
+      hideSolutionBtn.click();
+
+      // 隐藏按钮
+      hideSolutionBtn.style.display = 'none';
     });
   </script>
 </head>
@@ -41,3 +49,4 @@
   <script src="bundle.js"></script>
 </body>
 </html>
+
