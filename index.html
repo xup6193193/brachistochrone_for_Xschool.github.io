@@ -1,53 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Brachistochrone</title>
-  <link rel="stylesheet" href="styles.css"/>
-  <script>
-        
-    window.addEventListener('load', function() {
-      var hideSolutionBtn = document.getElementById('toggle-solution');
-      hideSolutionBtn.click();
-
-      // 隐藏按钮
-      hideSolutionBtn.style.display = 'none';
-    });
-
-    
-    document.addEventListener("DOMContentLoaded", function() {
-      // 在DOM加载完成后执行以下代码
-
-      var testCurveDetails = document.getElementById("test-curve-details");
-      var solutionDetails = document.getElementById("solution-details");
-
-      testCurveDetails.style.display = "none";
-      solutionDetails.style.display = "none";
-
-      setTimeout(function() {
-        testCurveDetails.style.display = "block"; 
-        solutionDetails.style.display = "block"; 
-      }, 10 * 1000);  // 10分钟的毫秒数
-
-      // 在这里添加了一个大括号，以正确闭合addEventListener的回调函数
-      setTimeout(function() {
-        var draggableElements = document.querySelectorAll(".pt.draggable circle");
-
-        draggableElements.forEach(function(element) {
-          element.style.cursor = "not-allowed";
-          element.style.pointerEvents = "none";
-        });
-      }, 10 * 1000);  // 十分钟的毫秒数
-    });
-
-  </script>
-</head>
+<html>
+  <head>
+    <title>Brachistochrone</title>
+    <link rel="stylesheet" href="styles.css"/>
+    <meta charset="utf-8" />
+  </head>
   <body>
     <div id="plot"></div>
     <div class="panel" id="controls">
       <div class="btn-group">
         <button id="toggle-particles" class="btn">Pause</button>
+        <button id="fit-to-solution" class="btn">Minimize Time</button>
         <button id="toggle-solution" class="btn">Hide Solution</button>
       </div>
       <div id="test-curve-details" class="details-field"></div>
@@ -56,4 +18,3 @@
     <script src="bundle.js"></script>
   </body>
 </html>
-
