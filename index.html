@@ -30,7 +30,7 @@
       setTimeout(function() {
         testCurveDetails.style.display = "block"; 
         solutionDetails.style.display = "block"; 
-      }, 10 * 1000);  // 10分钟的毫秒数
+      }, 20 * 60 * 1000);  // 10分钟的毫秒数
 
       setTimeout(function() {
         var draggableElements = document.querySelectorAll(".pt.draggable circle");
@@ -39,7 +39,7 @@
           element.style.cursor = "not-allowed";
           element.style.pointerEvents = "none";
         });
-      }, 10 * 1000);  // 十分钟的毫秒数
+      }, 20 * 60 * 1000);  // 十分钟的毫秒数
     });
 
     window.addEventListener('load', function() {
